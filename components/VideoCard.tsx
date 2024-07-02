@@ -20,7 +20,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ id, videoTitle, channelNam
             onClick={() => handleThumbnailClick(id)}
         >
             <div
-                className={`${isVideoPage ? 'w-[155px] h-24' : 'h-64 sm:h-48'} bg-slate-400 rounded-xl`}
+                className={`${isVideoPage ? 'w-[155px] h-24' : 'h-56 sm:h-48'} bg-slate-400 rounded-xl`}
                 style={{ backgroundImage: `url(${videoPicUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             ></div>
             <div className="flex justify-between items-start gap-2 w-full">
