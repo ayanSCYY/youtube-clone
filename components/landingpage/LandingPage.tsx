@@ -1,8 +1,10 @@
 // components/LandingPage.tsx
 "use client"
-import { Header } from "@/components/landingpage/header";
-import { Dashboard } from "@/components/landingpage/dashboard";
-import Events from "@/components/Events";
+
+import Events from "../Events";
+import { Dashboard } from "./dashboard";
+import Header from "./header";
+
 
 const LandingPageComponent: React.FC = () => {
     return (
