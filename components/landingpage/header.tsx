@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MenuSvg, MicrophoneSvg, NotificationSvg, Searchsvg } from '../svgs';
 import CustomAlert from '../CustomAlert';
 
+
 const Header = () => {
     const [showSearch, setShowSearch] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
@@ -20,6 +21,7 @@ const Header = () => {
 
     return (    
         <div className="flex justify-between items-center h-auto p-5 w-full bg-[#0F0F0F] fixed top-0 z-50">
+           
             <div className="flex items-center w-1/5">
                 <div className='ml-3 mr-2 cursor-pointer' onClick={handleMenuClick}>
                     <MenuSvg/>
