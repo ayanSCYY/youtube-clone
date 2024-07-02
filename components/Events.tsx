@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import getVideos from '@/app/service/videoService';
 import { Body } from './landingpage/body';
+import { VideoData } from '@/staticdata/VideoData';
 
 interface EventsProps {
     isVideoPage?: boolean;
@@ -20,13 +21,9 @@ export default function Events({ isVideoPage }: EventsProps) {
     const [videoArr, setVideoArr] = useState<Video[]>([]);
     const router = useRouter();
     useEffect(() => {
-        const fetchData = async () => {
-            const videoData = await getVideos();
-            setVideoArr(videoData);
-            console.log(videoData);
-        };
+            setVideoArr(VideoData);
+            
 
-        fetchData();
     }, []);
 
     console.log("ww",videoArr);

@@ -53,7 +53,7 @@ const StudioPage = () => {
 
     return (
         <div className='flex bg-gray-400 h-screen w-screen justify-center items-center'>
-            <div className='w-[25%] flex flex-col gap-2 p-10 bg-gray-600 rounded-3xl backdrop-blur-10'>
+            <div className='w-auto flex flex-col gap-2 p-10 bg-gray-600 rounded-3xl backdrop-blur-10'>
                 <input 
                     type="text" 
                     placeholder="Video Title" 
