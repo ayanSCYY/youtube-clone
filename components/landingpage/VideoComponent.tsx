@@ -7,6 +7,7 @@ import { HorizontalTripleDotSvg, ShareButtonsvg, ThumbDownDislikedSvg, ThumbDown
 import CustomAlert from "../CustomAlert";
 import Events from "../Events";
 import Header from "./header";
+import { VideoData } from "@/staticdata/VideoData";
 
 interface Video {
     id: number;
@@ -50,8 +51,8 @@ const Video = ({ params }: { params: { movieId: string } }) => {
     }
 
     useEffect(() => {
-        const fetchData = async () => {
-            const videoData = await getVideos();
+        const fetchData =  () => {
+            const videoData =  VideoData;
             const matchingVideo = videoData.find((video: Video) => video.id === parseInt(params.movieId));
             setVideo(matchingVideo || null);
         };
