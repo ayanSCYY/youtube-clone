@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { VideoCardMoreButtonSvg } from './svgs';
 
@@ -8,26 +8,36 @@ interface VideoCardProps {
     channelName: string;
     videoPicUrl: string;
     handleThumbnailClick: (id: number) => void;
+    isVideoPage?: boolean;
 }
 
-export const VideoCard: React.FC<VideoCardProps> = ({ id, videoTitle, channelName, videoPicUrl, handleThumbnailClick }) => {
-    console.log('Props in VideoCard:', { id, videoTitle, channelName, videoPicUrl }); // Log props in VideoCard
+export const VideoCard: React.FC<VideoCardProps> = ({ id, videoTitle, channelName, videoPicUrl, handleThumbnailClick, isVideoPage }) => {
+    console.log('Props in VideoCard:', { id, videoTitle, channelName, videoPicUrl });
 
     return (
-        <div className="flex flex-col gap-4 cursor-pointer" onClick={() => handleThumbnailClick(id)}>
-            <div className="h-56 rounded-2xl bg-slate-400" >
-         
-            </div>
-            <div className="flex justify-between gap-2">
-                <div className="w-12 h-12 rounded-full bg-[#222222]">
-                    
+        <div
+            className={`cursor-pointer ${isVideoPage ? 'grid grid-cols-2 gap-2' : 'flex flex-col gap-5'}`}
+            onClick={() => handleThumbnailClick(id)}
+        >
+            <div
+                className={`${isVideoPage ? 'w-[155px] h-24' : 'h-64 sm:h-48'} bg-slate-400 rounded-xl`}
+                style={{ backgroundImage: `url(${videoPicUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+            ></div>
+            <div className="flex justify-between items-start gap-2 w-full">
+                {!isVideoPage && (
+                    <div
+                        className="w-12 h-12 rounded-full bg-[#222222] flex-shrink-0"
+                        style={{ backgroundImage: `url(${videoPicUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    />
+                )}
+                <div className={`flex-1 ${isVideoPage ? 'ml-0' : 'ml-4'} w-full`}>
+                    <div className="text-left">
+                        <div className="text-[16px] font-semibold text-[#F1F1F1] truncate">{videoTitle}</div>
+                        <div className="text-[12px] text-[#AAAAAA] font-normal truncate">{channelName}</div>
+                    </div>
                 </div>
-                <div className="w-3/5">
-                    <div className="text-[24px] text-[#F1F1F1]">rcfg</div>
-                    <div className="text-[15px] text-[#AAAAAA]">chvgv</div>
-                </div>
-                <div>
-                    <VideoCardMoreButtonSvg/>
+                <div className="flex-shrink-0">
+                    <VideoCardMoreButtonSvg />
                 </div>
             </div>
         </div>

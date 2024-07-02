@@ -12,12 +12,14 @@ interface Video {
 interface BodyProps {
     videoArr: Video[];
     handleThumbnailClick: (id: number) => void;
+    isVideoPage?: boolean;
+    
 }
 
-export const Body: React.FC<BodyProps> = ({ videoArr, handleThumbnailClick }) => {
+export const Body: React.FC<BodyProps> = ({ videoArr, handleThumbnailClick,isVideoPage }) => {
     console.log('videoArr in Body:', videoArr); 
     return (
-        <div className="grid grid-cols-3 gap-x-4 gap-y-8">
+        <div className={`grid ${isVideoPage ? 'grid-cols-1 gap-y-4' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-y-8'} gap-x-4 `}>
             {videoArr.map((video) => (
                 <div key={video.id}>
                    <>{console.log(video.id)}</> 
@@ -27,6 +29,7 @@ export const Body: React.FC<BodyProps> = ({ videoArr, handleThumbnailClick }) =>
                     channelName={video.ChannelName}
                     videoPicUrl={video.VideoPicURL}
                     handleThumbnailClick={handleThumbnailClick} 
+                    isVideoPage={isVideoPage}
                 /></div>           
             ))}
         </div>

@@ -1,4 +1,4 @@
-import { url } from "inspector";
+
 
 export const DashboardData=[
     { url: "/svgs/h.svg", name: "Home" },
