@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import getVideos from '@/app/service/videoService';
-import { Body } from './landingpage/body';
+import { Body } from './videocardpage/body';
 import { VideoData } from '@/staticdata/VideoData';
 
 interface EventsProps {

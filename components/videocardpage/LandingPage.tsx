@@ -1,4 +1,4 @@
-// components/LandingPage.tsx
+
 "use client"
 
 import Events from "../Events";

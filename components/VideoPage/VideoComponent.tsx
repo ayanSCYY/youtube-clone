@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { HorizontalTripleDotSvg, ShareButtonsvg, ThumbDownDislikedSvg, ThumbDownSvg, ThumbUpLikedSvg, ThumbUpSvg } from "../svgs";
 import CustomAlert from "../CustomAlert";
 import Events from "../Events";
-import Header from "./header";
+import Header from "../videocardpage/header";
 import { VideoData } from "@/staticdata/VideoData";
 
 interface Video {
